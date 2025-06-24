@@ -2,5 +2,5 @@ module top_module(
     input a, 
     input b, 
     output out );
-    assign out = ~(a^b); // a xnor b= ab+ a'b'
+    assign out = ~(a^b); // a xnor b= ab+ a'b' and a'b' is not equal to (ab)' but equal to (a+b)'
 endmodule
