@@ -1,0 +1,15 @@
+module top_module ( 
+    input too_cold,
+    input too_hot,
+    input mode,
+    input fan_on,
+    output heater,
+    output aircon,
+    output fan
+); 
+
+assign heater = mode & too_cold;         // Heating mode & too cold
+assign aircon = ~mode & too_hot;         // Cooling mode & too hot
+assign fan = fan_on | heater | aircon;   // Fan turns on with either heater, aircon, or by request
+
+endmodule
