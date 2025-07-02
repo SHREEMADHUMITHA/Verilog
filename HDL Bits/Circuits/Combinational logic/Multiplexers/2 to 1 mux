@@ -1,1 +1,18 @@
-abc
+module top_module( 
+    input a, b, sel,
+    output reg out ); 
+    
+    always @(*) begin
+        if (sel)
+            out = b;
+        else
+            out = a;
+    end
+
+endmodule
+
+/*
+assign out = (sel & b) | (~sel & a);
+assign out = sel ? b : a;
+
+*/
